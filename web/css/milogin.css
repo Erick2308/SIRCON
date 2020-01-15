@@ -1,0 +1,34 @@
+    
+body{
+    background: radial-gradient(circle, buttonface,background);
+    
+}
+   
+
+#containerLogin{
+    margin-top: 80px;
+    width: 250%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 250px;
+
+    
+   
+    
+}   
+#formulario1{
+    
+    margin-top: 80px;
+    line-height:1; 
+   
+}
+    
+#botonAuth{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    width: 60%;
+    height: 40px;
+        
+}
