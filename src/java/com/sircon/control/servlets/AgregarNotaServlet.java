@@ -1,20 +1,27 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.sircon.control.servlets;
 
-import com.sircon.control.dto.RptaLoginDTO;
-import com.sircon.control.dto.UsuarioDTO;
-import com.sircon.modelo.service.UsuarioService;
+import com.sircon.modelo.service.NotaService;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-public class LoginServlet extends HttpServlet {
+/**
+ *
+ * @author Erick Meza
+ */
+public class AgregarNotaServlet extends HttpServlet {
     
-    private UsuarioService servicio;
+    NotaService servicioNota;
+    
+    
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,32 +35,18 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-           
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("pass");
-        UsuarioDTO usuarioLogin = new UsuarioDTO(usuario, password);
         
-        servicio = new UsuarioService();
-        RptaLoginDTO rptaLogin = servicio.autenticar(usuarioLogin);
+        String accion =request.getParameter("ingresar");
         
-        String pagDestino = "";
-        if("00".equals(rptaLogin.getCodigo())){
-            if(usuario.startsWith("D")){
-                pagDestino = "/Modulo1.jsp";
-            }else if(usuario.startsWith("ADM")){
-                pagDestino = "/Modulo2.jsp";
-            }else if(usuario.startsWith("A")){
-                pagDestino = "/modulo3.jsp";
-            }
-        }else
-            pagDestino = "/index.jsp";
-        request.setAttribute("resultado", rptaLogin);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher(pagDestino);
-        dispatcher.forward(request, response);
+        if(accion.equals("registrar")){
+            
         }
-                
-    
+        
+       
+        
+        
+        
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

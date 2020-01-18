@@ -14,7 +14,7 @@ body{
 }  
 
 #containerLogin{
-   width: 350px;
+   width: 250px;
    margin-top: 10px;
    background-image: linear-gradient(black, lightblue);
 }

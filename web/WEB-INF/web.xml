@@ -4,9 +4,25 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.sircon.control.servlets.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuscarServlet</servlet-name>
+        <servlet-class>com.sircon.control.servlets.BuscarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarNotaServlet</servlet-name>
+        <servlet-class>com.sircon.control.servlets.AgregarNotaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuscarServlet</servlet-name>
+        <url-pattern>/Buscar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarNotaServlet</servlet-name>
+        <url-pattern>/AgregarNota</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

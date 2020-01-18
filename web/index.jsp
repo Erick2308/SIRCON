@@ -62,7 +62,7 @@
                 </div>
                 <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" name="pass" placeHolder="Ingresa Contraseña">
+                <input type="password" class="form-control" name="pass" ">
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">

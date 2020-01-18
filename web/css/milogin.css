@@ -7,7 +7,6 @@ body{
 
 #containerLogin{
     margin-top: 80px;
-    width: 250%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -31,4 +30,4 @@ body{
     width: 60%;
     height: 40px;
         
-}
+}  
