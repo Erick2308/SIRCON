@@ -9,15 +9,9 @@ import java.util.*;
 public class Curso {
 
     /**
-     * Default constructor
-     */
-    public Curso() {
-    }
-
-    /**
      * 
      */
-    public int codCurso;
+    public Integer codCurso;
 
     /**
      * 
@@ -32,12 +26,12 @@ public class Curso {
     /**
      * 
      */
-    public Date fechaRegistro;
+    public String fechaRegistro;
 
     /**
      * 
      */
-    public Date ultModificacion;
+    public String ultModificacion;
 
     /**
      * 
@@ -48,6 +42,30 @@ public class Curso {
      * 
      */
     public int cantHoras;
+    
+    public Curso(){
+        
+    }
+
+    public Curso(Integer codCurso, String nombre, String descripcion, String fechaRegistro, String ultModificacion, String estado, int cantHoras) {
+        this.codCurso = codCurso;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fechaRegistro = fechaRegistro;
+        this.ultModificacion = ultModificacion;
+        this.estado = estado;
+        this.cantHoras = cantHoras;
+    }
+    
+    
+    
+    
+    
+    public Curso(Integer idCurso){
+        this.codCurso = idCurso;
+    }
+
+ 
 
     public int getCodCurso() {
         return codCurso;
@@ -73,19 +91,19 @@ public class Curso {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getUltModificacion() {
+    public String getUltModificacion() {
         return ultModificacion;
     }
 
-    public void setUltModificacion(Date ultModificacion) {
+    public void setUltModificacion(String ultModificacion) {
         this.ultModificacion = ultModificacion;
     }
 

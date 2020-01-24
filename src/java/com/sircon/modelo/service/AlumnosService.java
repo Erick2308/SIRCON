@@ -8,17 +8,17 @@ import java.util.List;
  *
  * @author Erick Meza
  */
-public class AlumnoService {   
+public class AlumnosService {   
     
     private AlumnoDAO dao;
     
-    public AlumnoService(){
+    public AlumnosService(){
         
         dao = new AlumnoDAO();
         
     }
     
-    public List<Alumno> listarTodoAlu(){
+    public List<Alumno> listarTodoAL(){
         
         return dao.obtenerTodos();
     }

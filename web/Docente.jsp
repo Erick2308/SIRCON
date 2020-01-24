@@ -1,10 +1,11 @@
 <%-- 
-    Document   : Modulo2
-    Created on : 17/12/2019, 03:49:05 PM
+    Document   : Modulo1
+    Created on : 17/12/2019, 09:45:05 AM
     Author     : gdelossantos
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,10 +33,6 @@
         <script>
             $(document).ready(function (){
                 $('#ejemplo1').DataTable({
-                    dom: 'Bfrtip',
-                    buttons: [
-                       'copy', 'csv','excel','pdf','print' 
-                    ],
                     language :{
                     "decimal":        "",
                     "emptyTable":     "datos no disponibles en la tabla",
@@ -70,67 +67,45 @@
             <a class="navbar-brand mr-auto" href=" ">
                 <img width="50" height="50" src="imagen/paloma2.jpg" alt="" class="rounded-circle"/>
             </a>
+        <ul class="navbar-nav flex-row mr-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link pr-2"><i class="fa fa-search"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link pr-2"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-3 mr-lg-0" id="navbarDropdownMenuLink" data-toggle="dropdown" 
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="index.jsp">Usuario</a>
+                        <a class="dropdown-item" href="index.jsp">Login</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
-        
         <nav class="navbar navbar-expand-md navbar-light">
-            
-            
-        </nav>
-        <section id="seccion1">
-            <div>
-                <table id="ejemplo1" class="display nowrap" style="width: 100%">
-                    <thead>
-                        <tr>
-                            <th>Curso</th>
-                            <th>Nota1</th>
-                            <th>Nota2</th>
-                            <th>Nota3</th>
-                            
-                        </tr>
-                    </thead>
-                    
-                    <tbody>
-                        <tr>
-                            <td>Matematica</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Ingles</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Fisica</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Quimica</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Biologia</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            
-                                      
-                            
-                        </tr>
-                    </tfoot>
-                </table>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-link-custom" href="//codeply.com/go/cxXqBnGrPx">IDAT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Docente?accion=listarTodo" >Tus Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Docente?accion=agregarNota">Agregar Nota</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
             </div>
-        </section> 
+        </nav>
         <footer class="mt-auto fixed-bottom p-3">
             <small>Copyrigth &copy; www.idat.edu.pe</small>
         </footer>

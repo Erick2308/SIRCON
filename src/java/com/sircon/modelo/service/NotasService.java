@@ -1,22 +1,22 @@
 package com.sircon.modelo.service;
 
 import com.sircon.modelo.dao.implement.NotasDAO;
-import com.sircon.modelo.entidades.Notas;
+import com.sircon.modelo.entidades.Nota;
 import java.util.List;
 
 /**
  *
  * @author Erick Meza
  */
-public class NotaService {
+public class NotasService {
     
     private NotasDAO dao;
     
-    public NotaService(){
+    public NotasService(){
         this.dao = new NotasDAO();
     }
     
-    public List<Notas> listarTodoNot(){
+    public List<Nota> listarTodoNot(){
         return dao.obtenerTodos();
         
     }
@@ -25,15 +25,15 @@ public class NotaService {
         dao.eliminar(id);
     }
     
-    public void actualizarNota(Notas Notas){
+    public void actualizarNota(Nota Notas){
         dao.modificar(Notas);
     }
     
-    public Notas buscarPorID(Long id){
+    public Nota buscarPorID(Long id){
         return dao.obtener(id);
     }
     
-    public void crearNota(Notas notas){
+    public void crearNota(Nota notas){
         dao.insertar(notas);
     }
     

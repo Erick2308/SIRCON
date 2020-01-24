@@ -6,13 +6,7 @@ import java.util.*;
 /**
  * 
  */
-public class Sede {
-
-    /**
-     * Default constructor
-     */
-    public Sede() {
-    }
+public class Sede {    
 
     /**
      * 
@@ -33,6 +27,18 @@ public class Sede {
      * 
      */
     public int telefono;
+    
+    public Sede(){
+        
+    }
+
+    public Sede(int codSede, String nombre, String direccion, int telefono) {
+        this.codSede = codSede;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
+    
 
     public int getCodSede() {
         return codSede;

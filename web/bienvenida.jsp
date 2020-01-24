@@ -72,17 +72,12 @@
                         <a class="nav-link" href="Modulo1.jsp">Profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" >Alumnos</a>
+                        <a class="nav-link" href="Modulo2.jsp" >Administrativo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Modulo2.jsp" >Notas</a>
+                        <a class="nav-link" href="Modulo3.jsp" >Alumnos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" >Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" >Aula</a>
-                    </li>
+                    
                 </ul>
                 
                 <form class="form-inline my-2 my-lg-0">

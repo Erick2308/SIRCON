@@ -12,7 +12,8 @@ public class JDBCSircon {
     
     private final String user = "root";
     private final String pass = "SirconVS20++";
-    private final String url = "jdbc:mysql://localhost:3306/sircon?serverTimezone=UTC";
+    //private final String url = "jdbc:mysql://localhost:3306/sircon?serverTimezone=UTC";
+    private final String url = "jdbc:mysql://localhost:3306/sircon?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false";
     private final String driverclass = "com.mysql.jdbc.Driver";
     
     private Connection conexion;

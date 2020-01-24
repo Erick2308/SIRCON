@@ -16,8 +16,8 @@ public class SedeDAO implements DAOBaseI<Sede, Long>{
     
     private JDBCSircon jdbc;
     
-    public SedeDAO(JDBCSircon instanciaJDBC){
-        this.jdbc = instanciaJDBC;
+    public SedeDAO(){
+        this.jdbc = new JDBCSircon();
     }
 
     @Override

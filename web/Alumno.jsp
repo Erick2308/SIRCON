@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Modulo1
-    Created on : 17/12/2019, 09:45:05 AM
+    Document   : Modulo3
+    Created on : 17/01/2020, 03:59:20 PM
     Author     : gdelossantos
 --%>
 
@@ -79,48 +79,48 @@
                 <table id="ejemplo1" class="display nowrap" style="width: 100%">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Nombre</th>
-                            <th>Cede</th>
                             <th>Curso</th>
+                            <th>Nota1</th>
+                            <th>Nota2</th>
+                            <th>Nota3</th>
                             
                         </tr>
                     </thead>
                     
                     <tbody>
                         <tr>
-                            <td>00001</td>
-                            <td>Jorge Torres Lara</td>
-                            <td>La Molina</td>
                             <td>Matematica</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             
                         </tr>
                         <tr>
-                            <td>00002</td>
-                            <td>Juan Sachez Luna</td>
-                            <td>Surco</td>
                             <td>Ingles</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             
                         </tr>
                         <tr>
-                            <td>00003</td>
-                            <td>Ana Caceres Torres</td>
-                            <td>Lima</td>
                             <td>Fisica</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             
                         </tr>
                         <tr>
-                            <td>00004</td>
-                            <td>Luis Castro Reyna</td>
-                            <td>Chorrillos</td>
                             <td>Quimica</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             
                         </tr>
                         <tr>
-                            <td>00005</td>
-                            <td>Susana Santos Castro</td>
-                            <td>Lince</td>
                             <td>Biologia</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             
                                       
                             
@@ -128,7 +128,7 @@
                     </tfoot>
                 </table>
             </div>
-        </section> 
+        </section>  
         <footer class="mt-auto fixed-bottom p-3">
             <small>Copyrigth &copy; www.idat.edu.pe</small>
         </footer>

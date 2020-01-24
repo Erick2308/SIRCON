@@ -29,8 +29,8 @@ public class CursoDAO implements DAOBaseI<Curso, Long>{
         try {
             ps.setString(1, object.getNombre());
             ps.setString(2, object.getDescripcion());
-            ps.setDate(3, (Date) object.getFechaRegistro());
-            ps.setDate(4, (Date) object.getUltModificacion());
+            ps.setString(3, object.getFechaRegistro());
+            ps.setString(4, object.getUltModificacion());
             ps.setString(5, object.getEstado());
             ps.setInt(6, object.getCantHoras());            
         } catch (SQLException e) {
@@ -47,8 +47,8 @@ public class CursoDAO implements DAOBaseI<Curso, Long>{
         try {
             ps.setString(1, object.getNombre());
             ps.setString(2, object.getDescripcion());
-            ps.setDate(3, (Date) object.getFechaRegistro());
-            ps.setDate(4, (Date) object.getUltModificacion());
+            ps.setString(3, object.getFechaRegistro());
+            ps.setString(4, object.getUltModificacion());
             ps.setString(5, object.getEstado());
             ps.setInt(6, object.getCantHoras());
             ps.setInt(7, object.getCodCurso());
@@ -75,7 +75,7 @@ public class CursoDAO implements DAOBaseI<Curso, Long>{
 
     @Override
     public List<Curso> obtenerTodos() {
-        String sql = "SELECT * FROM cursos";
+        String sql = "SELECT * FROM cursos;";
         PreparedStatement ps = jdbc.getSentencia(sql);
         ResultSet rs = jdbc.ejecutarConsulta(ps);
         List<Curso> resultado = new ArrayList<Curso>();
@@ -86,8 +86,8 @@ public class CursoDAO implements DAOBaseI<Curso, Long>{
                 objEncontrado.setCodCurso(rs.getInt("codCurso"));
                 objEncontrado.setNombre(rs.getString("nombre"));
                 objEncontrado.setDescripcion(rs.getString("descripcion"));
-                objEncontrado.setFechaRegistro(rs.getDate("fechaRegistro"));
-                objEncontrado.setUltModificacion(rs.getDate("ultModificacion"));
+                objEncontrado.setFechaRegistro(rs.getString("fechaRegistro"));
+                objEncontrado.setUltModificacion(rs.getString("ultModificacion"));
                 objEncontrado.setEstado(rs.getString("estado"));
                 objEncontrado.setCantHoras(rs.getInt("cantHoras"));
                 resultado.add(objEncontrado);
@@ -117,8 +117,8 @@ public class CursoDAO implements DAOBaseI<Curso, Long>{
                 objEncontrado.setCodCurso(rs.getInt("codCurso"));
                 objEncontrado.setNombre(rs.getString("nombre"));
                 objEncontrado.setDescripcion(rs.getString("descripcion"));
-                objEncontrado.setFechaRegistro(rs.getDate("fechaRegistro"));
-                objEncontrado.setUltModificacion(rs.getDate("ultModificacion"));
+                objEncontrado.setFechaRegistro(rs.getString("fechaRegistro"));
+                objEncontrado.setUltModificacion(rs.getString("ultModificacion"));
                 objEncontrado.setEstado(rs.getString("estado"));
                 objEncontrado.setCantHoras(rs.getInt("cantHoras"));    
                 

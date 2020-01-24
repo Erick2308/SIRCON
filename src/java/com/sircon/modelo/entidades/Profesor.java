@@ -32,13 +32,24 @@ public class Profesor extends Usuario {
     /**
      * 
      */
-    public Date fechaIngreso;
+    public String fechaIngreso;
 
     /**
      * 
      */
-    public Date fechaSalida;
+    public String fechaSalida;
+    
+    public Integer usuario_Dni;
 
+    public Profesor(int codProfesor, String profesion, float sueldo, String fechaIngreso, String fechaSalida, Integer usuario_Dni) {
+        this.codProfesor = codProfesor;
+        this.profesion = profesion;
+        this.sueldo = sueldo;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaSalida = fechaSalida;
+        this.usuario_Dni = usuario_Dni;
+    }   
+    
     public int getCodProfesor() {
         return codProfesor;
     }
@@ -63,20 +74,28 @@ public class Profesor extends Usuario {
         this.sueldo = sueldo;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
+    }
+
+    public Integer getUsuario_Dni() {
+        return usuario_Dni;
+    }
+
+    public void setUsuario_Dni(Integer usuario_Dni) {
+        this.usuario_Dni = usuario_Dni;
     }
 
 

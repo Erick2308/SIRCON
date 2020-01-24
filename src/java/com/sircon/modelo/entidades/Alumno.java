@@ -8,11 +8,7 @@ import java.util.*;
  */
 public class Alumno extends Usuario {
 
-    /**
-     * Default constructor
-     */
-    public Alumno() {
-    }
+    
     
     public String codAlumno;
 
@@ -24,17 +20,34 @@ public class Alumno extends Usuario {
     /**
      * 
      */
-    public Date fechaInscripcion;
+    public String fechaInscripcion;
 
     /**
      * 
      */
-    public Date fechaSalida;
+    public String fechaSalida;
 
     /**
      * 
      */
     public String estado;
+    
+    public Integer Usuario_dni;
+    
+    public Alumno() {
+    }
+
+    public Alumno(String codAlumno, String Usuario, String fechaInscripcion, String fechaSalida, String estado, Integer Usuario_dni) {
+        this.codAlumno = codAlumno;
+        this.Usuario = Usuario;
+        this.fechaInscripcion = fechaInscripcion;
+        this.fechaSalida = fechaSalida;
+        this.estado = estado;
+        this.Usuario_dni = Usuario_dni;
+    }
+
+
+    
 
     public String getUsuario() {
         return Usuario;
@@ -44,19 +57,19 @@ public class Alumno extends Usuario {
         this.Usuario = Usuario;
     }
 
-    public Date getFechaInscripcion() {
+    public String getFechaInscripcion() {
         return fechaInscripcion;
     }
 
-    public void setFechaInscripcion(Date fechaInscripcion) {
+    public void setFechaInscripcion(String fechaInscripcion) {
         this.fechaInscripcion = fechaInscripcion;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
@@ -75,6 +88,16 @@ public class Alumno extends Usuario {
     public void setCodAlumno(String codAlumno) {
         this.codAlumno = codAlumno;
     }
+
+    public Integer getUsuario_dni() {
+        return Usuario_dni;
+    }
+
+    public void setUsuario_dni(Integer Usuario_dni) {
+        this.Usuario_dni = Usuario_dni;
+    }
+    
+    
 
 
 }

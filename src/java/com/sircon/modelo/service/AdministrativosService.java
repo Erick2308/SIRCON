@@ -8,17 +8,17 @@ import java.util.List;
  *
  * @author Erick Meza
  */
-public class AdministrativoService {
+public class AdministrativosService {
     
     private AdministrativoDAO dao;
     
-    public AdministrativoService(){
+    public AdministrativosService(){
         
         dao = new AdministrativoDAO();
         
     }
     
-    public List<Administrativo> listarTodoAdm(){
+    public List<Administrativo> listarTodoAD(){
         
         return dao.obtenerTodos();
     }

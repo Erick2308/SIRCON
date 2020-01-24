@@ -2,7 +2,7 @@ package com.sircon.control.servlets;
 
 import com.sircon.control.dto.RptaLoginDTO;
 import com.sircon.control.dto.UsuarioDTO;
-import com.sircon.modelo.service.UsuarioService;
+import com.sircon.modelo.service.UsuariosService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
     
-    private UsuarioService servicio;
+    private UsuariosService servicio;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,17 +33,17 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("pass");
         UsuarioDTO usuarioLogin = new UsuarioDTO(usuario, password);
         
-        servicio = new UsuarioService();
+        servicio = new UsuariosService();
         RptaLoginDTO rptaLogin = servicio.autenticar(usuarioLogin);
         
         String pagDestino = "";
         if("00".equals(rptaLogin.getCodigo())){
             if(usuario.startsWith("D")){
-                pagDestino = "/Modulo1.jsp";
+                pagDestino = "/Docente.jsp";
             }else if(usuario.startsWith("ADM")){
-                pagDestino = "/Modulo2.jsp";
+                pagDestino = "/Administrador.jsp";
             }else if(usuario.startsWith("A")){
-                pagDestino = "/modulo3.jsp";
+                pagDestino = "/Alumno.jsp";
             }
         }else
             pagDestino = "/index.jsp";

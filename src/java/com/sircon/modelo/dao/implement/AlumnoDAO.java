@@ -26,8 +26,8 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
             PreparedStatement ps = jdbc.getSentencia(sql);
             try {
                 ps.setString(1, object.getEstado());
-                ps.setDate(2, (Date) object.getFechaInscripcion());
-                ps.setDate(3, (Date) object.getFechaSalida());
+                ps.setString(2, object.getFechaInscripcion());
+                ps.setString(3, object.getFechaSalida());
                 ps.setString(4, object.getUsuario());
             } catch (SQLException e) {
                 Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -42,8 +42,8 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
         PreparedStatement ps = jdbc.getSentencia(sql);
         try {
             ps.setString(1, object.getEstado());
-            ps.setDate(2, (Date) object.getFechaInscripcion());
-            ps.setDate(3, (Date) object.getFechaSalida());
+            ps.setString(2, object.getFechaInscripcion());
+            ps.setString(3, object.getFechaSalida());
             ps.setInt(4, object.getDni());
         } catch (SQLException e) {
             Logger.getLogger(AlumnoDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -78,9 +78,10 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
             while (rs.next()) {
                 objEncontrado = new Alumno();
                 objEncontrado.setUsuario(rs.getString("usuario"));
-                objEncontrado.setFechaInscripcion(rs.getDate("fechaInscripcion"));
-                objEncontrado.setFechaSalida(rs.getDate("fechaSalida"));
+                objEncontrado.setFechaInscripcion(rs.getString("fechaInscripcion"));
+                objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
                 objEncontrado.setEstado(rs.getString("estado"));
+                objEncontrado.setUsuario_dni(rs.getInt("Usuario_dni"));
                 resultado.add(objEncontrado);
             }
         } catch (SQLException e) {
@@ -103,9 +104,10 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
             ps.setLong(1, dni);
             ResultSet rs = jdbc.ejecutarConsulta(ps);
             objEncontrado.setUsuario(rs.getString("usuario"));
-            objEncontrado.setFechaInscripcion(rs.getDate("fechaInscripcion"));
-            objEncontrado.setFechaSalida(rs.getDate("fechaSalida"));
+            objEncontrado.setFechaInscripcion(rs.getString("fechaInscripcion"));
+            objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
             objEncontrado.setEstado(rs.getString("estado"));
+            objEncontrado.setUsuario_dni(rs.getInt("Usuario_dni"));
             rs.next();
             objEncontrado = new Alumno();
             

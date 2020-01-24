@@ -29,8 +29,8 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
         try {
             ps.setString(1, object.getProfesion());
             ps.setFloat(2, object.getSueldo());
-            ps.setDate(3, (Date) object.getFechaIngreso());
-            ps.setDate(4, (Date) object.getFechaSalida());
+            ps.setString(3, object.getFechaIngreso());
+            ps.setString(4, object.getFechaSalida());
         } catch (SQLException e) {
             Logger.getLogger(ProfesorDAO.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -46,8 +46,8 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
         try {
             ps.setString(1, object.getProfesion());
             ps.setFloat(2, object.getSueldo());
-            ps.setDate(3, (Date) object.getFechaIngreso());
-            ps.setDate(4, (Date) object.getFechaSalida());
+            ps.setString(3, object.getFechaIngreso());
+            ps.setString(4, object.getFechaSalida());
         } catch (SQLException e) {
             Logger.getLogger(ProfesorDAO.class.getName()).log(Level.SEVERE, null, e);
         }
@@ -83,8 +83,8 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
                 objEncontrado.setCodProfesor(rs.getInt("codProfesor"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
                 objEncontrado.setSueldo(rs.getFloat("sueldo"));
-                objEncontrado.setFechaIngreso(rs.getDate("fechaIngreso"));
-                objEncontrado.setFechaSalida(rs.getDate("fechaSalida"));
+                objEncontrado.setFechaIngreso(rs.getString("fechaIngreso"));
+                objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
                 resultado.add(objEncontrado);
             }
         } catch (SQLException e) {
@@ -111,8 +111,8 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
                 objEncontrado.setCodProfesor(rs.getInt("codProfesor"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
                 objEncontrado.setSueldo(rs.getFloat("sueldo"));
-                objEncontrado.setFechaIngreso(rs.getDate("fechaIngreso"));
-                objEncontrado.setFechaSalida(rs.getDate("fechaSalida"));
+                objEncontrado.setFechaIngreso(rs.getString("fechaIngreso"));
+                objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
         } catch (SQLException e) {
             Logger.getLogger(ProfesorDAO.class.getName()).log(Level.SEVERE, null, e);
         }

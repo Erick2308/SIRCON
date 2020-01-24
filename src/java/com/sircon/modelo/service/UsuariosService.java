@@ -9,7 +9,7 @@ import com.sircon.modelo.entidades.Usuario;
  *
  * @author Erick Meza
  */
-public class UsuarioService {
+public class UsuariosService {
     
     private UsuarioDAO dao;
     
@@ -23,7 +23,7 @@ public class UsuarioService {
     
     private static final String MSG_AUTENTICACION_CORRECTA = "Usuario y Password Correctos";
     
-    public UsuarioService(){
+    public UsuariosService(){
         this.dao = new UsuarioDAO();
     }
     

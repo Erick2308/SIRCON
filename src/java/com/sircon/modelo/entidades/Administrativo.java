@@ -9,12 +9,6 @@ import java.util.*;
 public class Administrativo extends Usuario {
 
     /**
-     * Default constructor
-     */
-    public Administrativo() {
-    }
-
-    /**
      * 
      */
     public String codAdministrativo;
@@ -27,12 +21,12 @@ public class Administrativo extends Usuario {
     /**
      * 
      */
-    public Date fechaIngreso;
+    public String fechaIngreso;
 
     /**
      * 
      */
-    public Date fechaSalida;
+    public String fechaSalida;
 
     /**
      * 
@@ -43,6 +37,24 @@ public class Administrativo extends Usuario {
      * 
      */
     public String profesion;
+    
+    public Integer Usuario_Dni;
+    
+    
+    public Administrativo() {
+    }
+
+    public Administrativo(String codAdministrativo, String cargo, String fechaIngreso, String fechaSalida, float sueldo, String profesion, Integer Usuario_Dni) {
+        this.codAdministrativo = codAdministrativo;
+        this.cargo = cargo;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaSalida = fechaSalida;
+        this.sueldo = sueldo;
+        this.profesion = profesion;
+        this.Usuario_Dni = Usuario_Dni;
+    }
+    
+    
 
     public String getCodAdministrativo() {
         return codAdministrativo;
@@ -60,19 +72,19 @@ public class Administrativo extends Usuario {
         this.cargo = cargo;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Date getFechaSalida() {
+    public String getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(String fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
@@ -91,6 +103,16 @@ public class Administrativo extends Usuario {
     public void setProfesion(String profesion) {
         this.profesion = profesion;
     }
+
+    public Integer getUsuario_Dni() {
+        return Usuario_Dni;
+    }
+
+    public void setUsuario_Dni(Integer Usuario_Dni) {
+        this.Usuario_Dni = Usuario_Dni;
+    }
+    
+    
 
     
 }

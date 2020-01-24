@@ -26,8 +26,8 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
         PreparedStatement ps = jdbc.getSentencia(sql);
         try {
             ps.setString(1, object.getCargo());
-            ps.setDate(2, (Date) object.getFechaIngreso());
-            ps.setDate(3, (Date) object.getFechaSalida());
+            ps.setString(2, object.getFechaIngreso());
+            ps.setString(3, object.getFechaSalida());
             ps.setFloat(4, object.getSueldo());
             ps.setString(5, object.getProfesion());
         } catch (SQLException e) {
@@ -43,8 +43,8 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
         PreparedStatement ps = jdbc.getSentencia(sql);
         try {
             ps.setString(1, object.getCargo());
-            ps.setDate(2, (Date) object.getFechaIngreso());
-            ps.setDate(3, (Date) object.getFechaSalida());
+            ps.setString(2, object.getFechaIngreso());
+            ps.setString(3, object.getFechaSalida());
             ps.setFloat(4, object.getSueldo());
             ps.setString(5, object.getProfesion());
             ps.setInt(6, object.getDni());
@@ -79,7 +79,7 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
         try {
             while (rs.next()){
                 objEncontrado = new Administrativo();
-                objEncontrado.setFechaIngreso(rs.getDate("Fecha Ingreso"));
+                objEncontrado.setFechaIngreso(rs.getString("Fecha Ingreso"));
                 objEncontrado.setUsuario(rs.getString("usuario"));
                 objEncontrado.setNombres(rs.getString("nombre"));
                 objEncontrado.setApellidoPaterno(rs.getString("apellidoPaterno"));
@@ -112,7 +112,7 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
             ResultSet rs = jdbc.ejecutarConsulta(ps);
             rs.next();
                 objEncontrado = new Administrativo();
-                objEncontrado.setFechaIngreso(rs.getDate("Fecha Ingreso"));
+                objEncontrado.setFechaIngreso(rs.getString("Fecha Ingreso"));
                 objEncontrado.setUsuario(rs.getString("usuario"));
                 objEncontrado.setNombres(rs.getString("nombre"));
                 objEncontrado.setApellidoPaterno(rs.getString("apellidoPaterno"));

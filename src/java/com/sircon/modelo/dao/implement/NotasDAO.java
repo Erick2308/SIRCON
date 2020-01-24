@@ -1,7 +1,7 @@
 package com.sircon.modelo.dao.implement;
 
 import com.sircon.modelo.dao.DAOBaseI;
-import com.sircon.modelo.entidades.Notas;
+import com.sircon.modelo.entidades.Nota;
 import com.sircon.modelo.util.JDBCSircon;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class NotasDAO implements DAOBaseI<Notas, Long>{
+public class NotasDAO implements DAOBaseI<Nota, Long>{
     
     private JDBCSircon jdbc;
 
@@ -22,7 +22,7 @@ public class NotasDAO implements DAOBaseI<Notas, Long>{
     }
 
     @Override
-    public void insertar(Notas object) {        
+    public void insertar(Nota object) {        
         String sql = "INSERT INTO nota (nota, comentario) values (?, ?)";
         PreparedStatement ps = jdbc.getSentencia(sql);
         try {
@@ -36,7 +36,7 @@ public class NotasDAO implements DAOBaseI<Notas, Long>{
     }
 
     @Override
-    public void modificar(Notas object) {
+    public void modificar(Nota object) {
         String sql = "UPDATE nota SET nota = ?, comentario = ? WHERE codNota = ?";
         PreparedStatement ps = jdbc.getSentencia(sql);
         try {
@@ -66,15 +66,15 @@ public class NotasDAO implements DAOBaseI<Notas, Long>{
     }
 
     @Override
-    public List<Notas> obtenerTodos() {
+    public List<Nota> obtenerTodos() {
         String sql = "SELECT * FROM nota";
         PreparedStatement ps = jdbc.getSentencia(sql);
         ResultSet rs = jdbc.ejecutarConsulta(ps);
-        List<Notas> resultado = new ArrayList<Notas>();
-        Notas objEncontrado = null;
+        List<Nota> resultado = new ArrayList<Nota>();
+        Nota objEncontrado = null;
         try {
             while (rs.next()){
-                objEncontrado = new Notas();
+                objEncontrado = new Nota();
                 objEncontrado.setCodNota(rs.getInt("codNota"));
                 objEncontrado.setNota(rs.getFloat("nota"));
                 objEncontrado.setComentario(rs.getString("comentario"));
@@ -92,16 +92,16 @@ public class NotasDAO implements DAOBaseI<Notas, Long>{
     }
 
     @Override
-    public Notas obtener(Long codNota) {
+    public Nota obtener(Long codNota) {
         String sql = "SELECT * FROM nota WHERE codNota = ?";
         PreparedStatement ps = jdbc.getSentencia(sql);
         
-        Notas objEncontrado = null;
+        Nota objEncontrado = null;
         try {
             ps.setLong(1, codNota);
             ResultSet rs = jdbc.ejecutarConsulta(ps);
             rs.next();
-                objEncontrado = new Notas();
+                objEncontrado = new Nota();
                 objEncontrado.setCodNota(rs.getInt("codNota"));
                 objEncontrado.setNota(rs.getFloat("nota"));
                 objEncontrado.setComentario(rs.getString("comentario"));

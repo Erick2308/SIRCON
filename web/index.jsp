@@ -55,14 +55,12 @@
                 
                 <div class="form-group">
                 <label for="exampleInputEmail1">Usuario</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" aria-describedby="emailHelp"
-                       placeHolder="Ingresa Usuario" required ="">
-                </div>
+                <input type="txt" class="form-control" id="exampleInputEmail1" name ="usuario" aria-describedby="emailHelp">
                 <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" name="pass" ">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="pass">
                 </div>
                 <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -71,7 +69,7 @@
                 <div>
                     <center>
                         
-                    <button type="submit" class="btn btn-primary" id="botonAuth" >Iniciar sesión</button>
+                    <button type="submit" class="btn btn-primary" id="botonAuth">Iniciar sesión</button>
                       </center>  
                                              
                 </div>
