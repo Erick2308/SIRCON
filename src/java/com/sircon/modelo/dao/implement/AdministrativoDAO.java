@@ -79,13 +79,13 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
         try {
             while (rs.next()){
                 objEncontrado = new Administrativo();
-                objEncontrado.setFechaIngreso(rs.getString("Fecha Ingreso"));
-                objEncontrado.setUsuario(rs.getString("usuario"));
-                objEncontrado.setNombres(rs.getString("nombre"));
-                objEncontrado.setApellidoPaterno(rs.getString("apellidoPaterno"));
-                objEncontrado.setApellidoMaterno(rs.getString("apellidoMaterno"));
+                objEncontrado.setCodAdministrativo(rs.getInt("codAdministrativo"));
+                objEncontrado.setCargo(rs.getString("cargo"));
+                objEncontrado.setFechaIngreso(rs.getString("fechaIngreso"));
+                objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
+                objEncontrado.setSueldo(rs.getInt("sueldo"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
-                objEncontrado.setSueldo(rs.getFloat("sueldo"));
+                objEncontrado.setUsuario_Dni(rs.getInt("Usuario_dni"));
                 resultado.add(objEncontrado);
             }
         } catch (SQLException e) {
@@ -118,7 +118,7 @@ public class AdministrativoDAO implements DAOBaseI<Administrativo, Long>{
                 objEncontrado.setApellidoPaterno(rs.getString("apellidoPaterno"));
                 objEncontrado.setApellidoMaterno(rs.getString("apellidoMaterno"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
-                objEncontrado.setSueldo(rs.getFloat("sueldo"));            
+                objEncontrado.setSueldo(rs.getInt("sueldo"));            
         } catch (SQLException e) {
             Logger.getLogger(AdministrativoDAO.class.getName()).log(Level.SEVERE, null, e);
         }

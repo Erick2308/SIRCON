@@ -6,14 +6,9 @@ import java.util.*;
 /**
  * 
  */
-public class Profesor extends Usuario {
+public class Profesor {
 
-    /**
-     * Default constructor
-     */
-    public Profesor() {
-    }
-
+   
     /**
      * 
      */
@@ -27,7 +22,7 @@ public class Profesor extends Usuario {
     /**
      * 
      */
-    public float sueldo;
+    public int sueldo;
 
     /**
      * 
@@ -39,15 +34,18 @@ public class Profesor extends Usuario {
      */
     public String fechaSalida;
     
-    public Integer usuario_Dni;
+    public int Usuario_dni;
+    
+    public Profesor() {
+    }
 
-    public Profesor(int codProfesor, String profesion, float sueldo, String fechaIngreso, String fechaSalida, Integer usuario_Dni) {
+    public Profesor(int codProfesor, String profesion, int sueldo, String fechaIngreso, String fechaSalida, int Usuario_dni) {
         this.codProfesor = codProfesor;
         this.profesion = profesion;
         this.sueldo = sueldo;
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
-        this.usuario_Dni = usuario_Dni;
+        this.Usuario_dni = Usuario_dni;
     }   
     
     public int getCodProfesor() {
@@ -66,11 +64,11 @@ public class Profesor extends Usuario {
         this.profesion = profesion;
     }
 
-    public float getSueldo() {
+    public int getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(float sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -90,12 +88,12 @@ public class Profesor extends Usuario {
         this.fechaSalida = fechaSalida;
     }
 
-    public Integer getUsuario_Dni() {
-        return usuario_Dni;
+    public int getUsuario_dni() {
+        return Usuario_dni;
     }
 
-    public void setUsuario_Dni(Integer usuario_Dni) {
-        this.usuario_Dni = usuario_Dni;
+    public void setUsuario_dni(int Usuario_dni) {
+        this.Usuario_dni = Usuario_dni;
     }
 
 

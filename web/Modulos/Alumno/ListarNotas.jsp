@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ListaProfesores
-    Created on : 24 ene. 2020, 14:17:10
+    Document   : ListarNotas
+    Created on : 24 ene. 2020, 18:23:44
     Author     : Erick Meza
 --%>
 
@@ -95,16 +95,10 @@
                         <a class="nav-link" id="nav-link-custom" href="//codeply.com/go/cxXqBnGrPx">IDAT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Administrador?accion=listaSedes" >Sedes</a>
+                        <a class="nav-link" href="Alumno?accion=listarTodo" >Tus Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Administrador?accion=listaAlumnos">Alumnos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Administrador?accion=listaProfesores">Profesores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Administrador?accion=listaAdministradores">Administradores</a>
+                        <a class="nav-link" href="Alumno?accion=correcion" >Solictar Correccion</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -120,22 +114,19 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Profesion</th>
-                            <th>Sueldo</th>
-                            <th>Fecha Ingreso</th>
-                            <th>Fecha Salida</th>
-                            <th>DNI</th>
+                            <th>Nota</th>
+                            <th>Comentario</th>
+                            <th>Curso</th>
+
                         </tr>
                     </thead>                    
                     <tbody>
-                        <c:forEach var="v" items="${listaP}">
+                        <c:forEach var="p" items="${lista}">
                             <tr>
-                                <td><c:out value="${v.codProfesor}" /></td>
-                                <td><c:out value="${v.profesion}" /></td>
-                                <td><c:out value="${v.sueldo}" /></td>
-                                <td><c:out value="${v.fechaIngreso}" /></td>
-                                <td><c:out value="${v.fechaSalida}" /></td>
-                                <%-- <td><c:out value="${v.Usuario_dni}" /></td> --%>
+                                <td><c:out value="${p.codNota}" /></td>
+                                <td><c:out value="${p.nota}" /></td>
+                                <td><c:out value="${p.comentario}" /></td>
+                                <%--   <td><c:out value="${p.curso}" /></td>    --%>                        
                             </tr>
                         </c:forEach>
                     </tbody>

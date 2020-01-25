@@ -72,7 +72,7 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
 
     @Override
     public List<Profesor> obtenerTodos() {
-        String sql = "SELECT * FROM nota";
+        String sql = "SELECT * FROM profesor";
         PreparedStatement ps = jdbc.getSentencia(sql);
         ResultSet rs = jdbc.ejecutarConsulta(ps);
         List<Profesor> resultado = new ArrayList<Profesor>();
@@ -82,9 +82,10 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
                 objEncontrado = new Profesor();
                 objEncontrado.setCodProfesor(rs.getInt("codProfesor"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
-                objEncontrado.setSueldo(rs.getFloat("sueldo"));
+                objEncontrado.setSueldo(rs.getInt("sueldo"));
                 objEncontrado.setFechaIngreso(rs.getString("fechaIngreso"));
                 objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
+                objEncontrado.setUsuario_dni(rs.getInt("Usuario_dni"));
                 resultado.add(objEncontrado);
             }
         } catch (SQLException e) {
@@ -110,7 +111,7 @@ public class ProfesorDAO implements DAOBaseI<Profesor, Long>{
                 objEncontrado = new Profesor();
                 objEncontrado.setCodProfesor(rs.getInt("codProfesor"));
                 objEncontrado.setProfesion(rs.getString("profesion"));
-                objEncontrado.setSueldo(rs.getFloat("sueldo"));
+                objEncontrado.setSueldo(rs.getInt("sueldo"));
                 objEncontrado.setFechaIngreso(rs.getString("fechaIngreso"));
                 objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
         } catch (SQLException e) {

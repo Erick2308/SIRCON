@@ -130,15 +130,15 @@
                         </tr>
                     </thead>                    
                     <tbody>
-                        <c:forEach var="m" items="${listaAD}">
+                        <c:forEach var="b" items="${listaAD}">
                             <tr>
-                                <td><c:out value="${m.codAdministrativo}" /></td>
-                                <td><c:out value="${m.cargo}" /></td>
-                                <td><c:out value="${m.fechaIngreso}" /></td>
-                                <td><c:out value="${m.fechaSalida}" /></td>
-                                <td><c:out value="${m.sueldo}" /></td>
-                                <td><c:out value="${m.profesion}" /></td>
-                                <td><c:out value="${m.Usuario_dni}" /></td>
+                                <td><c:out value="${b.codAdministrativo}" /></td>
+                                <td><c:out value="${b.cargo}" /></td>
+                                <td><c:out value="${b.fechaIngreso}" /></td>
+                                <td><c:out value="${b.fechaSalida}" /></td>
+                                <td><c:out value="${b.sueldo}" /></td>
+                                <td><c:out value="${b.profesion}" /></td>
+                             <%-- <td><c:out value="${b.Usuario_dni}" /></td> --%>
                                 
                             </tr>
                         </c:forEach>

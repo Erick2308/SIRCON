@@ -10,7 +10,7 @@ public class Alumno extends Usuario {
 
     
     
-    public String codAlumno;
+    public int codAlumno;
 
     /**
      * 
@@ -32,12 +32,12 @@ public class Alumno extends Usuario {
      */
     public String estado;
     
-    public Integer Usuario_dni;
+    public int Usuario_dni;
     
     public Alumno() {
     }
 
-    public Alumno(String codAlumno, String Usuario, String fechaInscripcion, String fechaSalida, String estado, Integer Usuario_dni) {
+    public Alumno(int codAlumno, String Usuario, String fechaInscripcion, String fechaSalida, String estado, int Usuario_dni) {
         this.codAlumno = codAlumno;
         this.Usuario = Usuario;
         this.fechaInscripcion = fechaInscripcion;
@@ -81,19 +81,19 @@ public class Alumno extends Usuario {
         this.estado = estado;
     }
 
-    public String getCodAlumno() {
+    public int getCodAlumno() {
         return codAlumno;
     }
 
-    public void setCodAlumno(String codAlumno) {
+    public void setCodAlumno(int codAlumno) {
         this.codAlumno = codAlumno;
     }
 
-    public Integer getUsuario_dni() {
+    public int getUsuario_dni() {
         return Usuario_dni;
     }
 
-    public void setUsuario_dni(Integer Usuario_dni) {
+    public void setUsuario_dni(int Usuario_dni) {
         this.Usuario_dni = Usuario_dni;
     }
     

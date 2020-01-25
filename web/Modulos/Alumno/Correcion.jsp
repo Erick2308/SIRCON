@@ -1,6 +1,6 @@
 <%-- 
-    Document   : AgregarNota
-    Created on : 18 ene. 2020, 12:27:05
+    Document   : Correcion
+    Created on : 24 ene. 2020, 18:26:58
     Author     : Erick Meza
 --%>
 
@@ -30,31 +30,7 @@
         <link href="css/datatables.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/datatables.min.js" type="text/javascript"></script>
         <link rel="shortcut icon" href="imagen/paloma.jpg" type="imagen/jpg"/>
-        <script>
-            $(document).ready(function () {
-
-
-                var urlBase = "/SIRCON/Docente?accion=ajax";
-                $("#curso").on('change', function () {
-                    var urlCursos = urlBase + "1&curso=" + $(this).val();
-                    if (urlCursos)
-                        window.location = urlCursos;
-                    return false;
-                });
-
-            <%--$("#sede").on('change', function () {
-                    var urlSalas = urlBase + "2&sede=" + $(this).val();
-                    var cineAux = $("#cine").val();
-                    var peliculaAux = $("#pelicula").val();
-                    urlSalas = urlSalas + "&pelicula=" + peliculaAux + "&cine=" + cineAux;
-
-                    if (urlSalas)
-                        window.location = urlSalas;
-                    return false;
-});--%>
-
-            });
-        </script>
+       
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-flex-row">
@@ -88,17 +64,17 @@
                         <a class="nav-link" id="nav-link-custom" href="//codeply.com/go/cxXqBnGrPx">IDAT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Docente?accion=listarTodo" >Tus Cursos</a>
+                        <a class="nav-link" href="Alumno?accion=listarTodo" >Tus Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Docente?accion=ingresarNota">Agregar Nota</a>
+                        <a class="nav-link" href="Alumno?accion=correcion" >Solictar Correccion</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <section  class="container" id="Registro de Notas">
-            <p>Datos de la Nota a Registrar</p>
-            <form action="Docente?accion=guardarNota" 
+            <p>Solicitar Correcion</p>
+            <form action="formulario1" 
                   method="post">
                 
                 <div class="form-group row">
@@ -118,21 +94,11 @@
                     <div class="col-sm-10">
                         <select id="alumno" name="alumno" class="form-control"
                                 required="required">
-                            <option value="0">-- Selecciona Alumno --</option>
-                            <c:forEach items="${ajax2}" var="alumno">
-                                <option value="${alumno.codAlumno}" ${alumno.codAlumno == selectedAlumno ? 'selected' : ''}>${alumno.codAlumno}</option>
-                            </c:forEach>
+                            <option value="0">-- Selecciona Evaluacion a corregir --</option>
+                            
                         </select>
                     </div>
-                </div>
-                </div>                
-                <div class="form-group row">
-                    <label for="nombre" class="col-sm-2 col-form-label">Nota :</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="nota" class="form-control" id="nota"
-                               placeholder="Ingrese Nota"/>
-                    </div>
-                </div>
+                </div>      
                 <div class="form-group row">
                     <label for="nombre" class="col-sm-2 col-form-label">Comentario:</label>
                     <div class="col-sm-10">
@@ -141,7 +107,7 @@
                     </div>
                 </div>
                 <div align="center">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>
 

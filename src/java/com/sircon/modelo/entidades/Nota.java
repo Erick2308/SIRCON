@@ -29,24 +29,18 @@ public class Nota {
      */
     public String comentario;
     
-    public Curso curso;
-    
-    public Alumno alumno;
+    public int Cursos_codCursos;
+    public int Alumno_codAlumno;
 
-    public Nota(float nota, String comentario, Curso curso, Alumno alumno) {
-        super();
-        this.nota = nota;
-        this.comentario = comentario;
-        this.curso = curso;
-        this.alumno = alumno;
-    }
-    
-    public Nota(int codNota, float nota, String comentario) {
+    public Nota(int codNota, float nota, String comentario, int Cursos_codCursos, int Alumno_codAlumno) {
         this.codNota = codNota;
         this.nota = nota;
         this.comentario = comentario;
-    }  
+        this.Cursos_codCursos = Cursos_codCursos;
+        this.Alumno_codAlumno = Alumno_codAlumno;
+    }
     
+   
     
 
     public int getCodNota() {
@@ -73,21 +67,23 @@ public class Nota {
         this.comentario = comentario;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public int getCursos_codCursos() {
+        return Cursos_codCursos;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setCursos_codCursos(int Cursos_codCursos) {
+        this.Cursos_codCursos = Cursos_codCursos;
     }
 
-    public Alumno getAlumno() {
-        return alumno;
+    public int getAlumno_codAlumno() {
+        return Alumno_codAlumno;
     }
 
-    public void setAlumno(Alumno alumno) {
-        this.alumno = alumno;
+    public void setAlumno_codAlumno(int Alumno_codAlumno) {
+        this.Alumno_codAlumno = Alumno_codAlumno;
     }
+    
+    
     
     
 

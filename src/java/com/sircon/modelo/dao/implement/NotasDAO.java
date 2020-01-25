@@ -78,6 +78,8 @@ public class NotasDAO implements DAOBaseI<Nota, Long>{
                 objEncontrado.setCodNota(rs.getInt("codNota"));
                 objEncontrado.setNota(rs.getFloat("nota"));
                 objEncontrado.setComentario(rs.getString("comentario"));
+                objEncontrado.setCursos_codCursos(rs.getInt("Cursos_codCursos"));
+                objEncontrado.setAlumno_codAlumno(rs.getInt("Alumno_codAlumno"));
                 resultado.add(objEncontrado);
             }
         } catch (SQLException e) {

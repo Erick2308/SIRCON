@@ -11,7 +11,7 @@ public class Administrativo extends Usuario {
     /**
      * 
      */
-    public String codAdministrativo;
+    public int codAdministrativo;
 
     /**
      * 
@@ -31,20 +31,20 @@ public class Administrativo extends Usuario {
     /**
      * 
      */
-    public float sueldo;
+    public int sueldo;
 
     /**
      * 
      */
     public String profesion;
     
-    public Integer Usuario_Dni;
+    public int Usuario_Dni;
     
     
     public Administrativo() {
     }
 
-    public Administrativo(String codAdministrativo, String cargo, String fechaIngreso, String fechaSalida, float sueldo, String profesion, Integer Usuario_Dni) {
+    public Administrativo(int codAdministrativo, String cargo, String fechaIngreso, String fechaSalida, int sueldo, String profesion, int Usuario_Dni) {
         this.codAdministrativo = codAdministrativo;
         this.cargo = cargo;
         this.fechaIngreso = fechaIngreso;
@@ -56,11 +56,11 @@ public class Administrativo extends Usuario {
     
     
 
-    public String getCodAdministrativo() {
+    public int getCodAdministrativo() {
         return codAdministrativo;
     }
 
-    public void setCodAdministrativo(String codEmpleado) {
+    public void setCodAdministrativo(int codEmpleado) {
         this.codAdministrativo = codAdministrativo;
     }
 
@@ -92,7 +92,7 @@ public class Administrativo extends Usuario {
         return sueldo;
     }
 
-    public void setSueldo(float sueldo) {
+    public void setSueldo(int sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -104,11 +104,11 @@ public class Administrativo extends Usuario {
         this.profesion = profesion;
     }
 
-    public Integer getUsuario_Dni() {
+    public int getUsuario_Dni() {
         return Usuario_Dni;
     }
 
-    public void setUsuario_Dni(Integer Usuario_Dni) {
+    public void setUsuario_Dni(int Usuario_Dni) {
         this.Usuario_Dni = Usuario_Dni;
     }
     

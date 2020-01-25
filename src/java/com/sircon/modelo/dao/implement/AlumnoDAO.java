@@ -77,7 +77,7 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
         try {
             while (rs.next()) {
                 objEncontrado = new Alumno();
-                objEncontrado.setUsuario(rs.getString("usuario"));
+                objEncontrado.setCodAlumno(rs.getInt("codAlumno"));
                 objEncontrado.setFechaInscripcion(rs.getString("fechaInscripcion"));
                 objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
                 objEncontrado.setEstado(rs.getString("estado"));
@@ -103,7 +103,7 @@ public class AlumnoDAO implements DAOBaseI<Alumno, Long> {
         try {
             ps.setLong(1, dni);
             ResultSet rs = jdbc.ejecutarConsulta(ps);
-            objEncontrado.setUsuario(rs.getString("usuario"));
+            objEncontrado.setCodAlumno(rs.getInt("codAlumno"));
             objEncontrado.setFechaInscripcion(rs.getString("fechaInscripcion"));
             objEncontrado.setFechaSalida(rs.getString("fechaSalida"));
             objEncontrado.setEstado(rs.getString("estado"));

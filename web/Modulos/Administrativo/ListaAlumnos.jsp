@@ -128,14 +128,13 @@
                         </tr>
                     </thead>                    
                     <tbody>
-                        <c:forEach var="m" items="${listaAL}">
+                        <c:forEach var="n" items="${listaAL}">
                             <tr>
-                                <td><c:out value="${m.codAlumno}" /></td>
-                                <td><c:out value="${m.fechaInscripcion}" /></td>
-                                <td><c:out value="${m.fechaSalida}" /></td>
-                                <td><c:out value="${m.estado}" /></td>
-                                <td><c:out value="${m.Usuario_dni}" /></td>
-                                
+                                <td><c:out value="${n.codAlumno}" /></td>
+                                <td><c:out value="${n.fechaInscripcion}" /></td>
+                                <td><c:out value="${n.fechaSalida}" /></td>
+                                <td><c:out value="${n.estado}" /></td>
+                                <%-- <td><c:out value="${n.Usuario_dni}" /></td> --%>
                             </tr>
                         </c:forEach>
                     </tbody>

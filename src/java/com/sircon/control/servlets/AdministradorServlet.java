@@ -138,8 +138,8 @@ public class AdministradorServlet extends HttpServlet {
     
     private void listarAdministradores (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         RequestDispatcher dispatcher = request.getRequestDispatcher("/Modulos/Administrativo/ListaAdministradores.jsp");
-        List<Administrativo> administrador = servicioAdministrativo.listarTodoAD();
-        request.setAttribute("listaAD", administrador);
+        List<Administrativo> administradores = servicioAdministrativo.listarTodoAD();
+        request.setAttribute("listaAD", administradores);
         dispatcher.forward(request, response);
     }
     

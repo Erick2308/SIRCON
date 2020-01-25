@@ -57,6 +57,9 @@ public class DocenteServlet extends HttpServlet {
             case "agregarNota":
                 agregarNota(request, response);
                 break;
+            case "ajax1":
+                buscarCursos(request, response);
+                break;
             case "guardarNota":
                 guardarNota(request, response);
                 break;
@@ -129,6 +132,19 @@ public class DocenteServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
     
+    private void buscarCursos (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/Modulos/Profesor/AgregarNota.jsp");
+        System.out.println("En el metodo ajax1");        
+        servicioCurso = new CursosServices();        
+        String curso = request.getParameter("curso");
+        System.out.println("curso : " + curso);
+        HttpSession misession = request.getSession(true);
+        request.setAttribute("selectedCurso", curso);
+        dispatcher.forward(request, response);
+    }
+    
+    
     private void guardarNota(HttpServletRequest request, HttpServletResponse response) throws IOException{
         
         Nota notas = new Nota();
@@ -137,14 +153,16 @@ public class DocenteServlet extends HttpServlet {
         Integer codCurso = Integer.valueOf(request.getParameter("curso"));
         System.out.println("Codigo curso obtenido: "+codCurso);
         Curso curso = new Curso(codCurso);
-        notas.setCurso(curso);             
+        notas.setCursos_codCursos(curso.codCurso);             
         Integer codAlumno = Integer.valueOf(request.getParameter("alumno"));
         System.out.println("Codigo alumno: " +codAlumno);
         Alumno alumno = new Alumno();
-        notas.setAlumno(alumno);
+        notas.setAlumno_codAlumno(alumno.codAlumno);
         servicioNotas.crearNota(notas);
         response.sendRedirect("Docente?accion=listarTodo");
-    }private void eliminarNota (HttpServletRequest request, HttpServletResponse response) throws IOException {
+    }
+
+private void eliminarNota (HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String idNotaEliminar = request.getParameter("id");
         System.out.println("funcion a eliminar : " + idNotaEliminar);
@@ -152,3 +170,4 @@ public class DocenteServlet extends HttpServlet {
         response.sendRedirect("Funciones?accion=listarTodo");
     }
 }
+
